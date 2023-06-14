@@ -1,0 +1,1 @@
+class SQLiteException implements Exception {}
