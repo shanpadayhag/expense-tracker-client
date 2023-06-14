@@ -27,6 +27,11 @@ class _UserDashboardPage extends State<UserDashboardPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Center(
+            child: MaterialButton(
+                color: Theme.of(context).primaryColor,
+                child: const Text("Hi"),
+                onPressed: () {})));
   }
 }
