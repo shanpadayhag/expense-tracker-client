@@ -2,10 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:expense_tracker_client/core/exceptions/sqlite_exception.dart';
 import 'package:expense_tracker_client/core/protocols/failures/failure.dart';
 import 'package:expense_tracker_client/core/protocols/failures/sqlite_failure.dart';
-import 'package:expense_tracker_client/data/models/fund_model.dart';
-import 'package:expense_tracker_client/data/protocols/datasources/sqlite/fund_sqlite_source.dart';
-import 'package:expense_tracker_client/domain/entities/fund.dart';
-import 'package:expense_tracker_client/domain/repositories/fund_repository.dart';
+import 'package:expense_tracker_client/features/funds/data/models/fund_model.dart';
+import 'package:expense_tracker_client/features/funds/data/protocols/datasources/sqlite/fund_sqlite_source.dart';
+import 'package:expense_tracker_client/features/funds/domain/entities/fund.dart';
+import 'package:expense_tracker_client/features/funds/domain/repositories/fund_repository.dart';
 
 class FundRepositoryImpl implements FundRepository {
   final FundSQLiteSource sqliteSource;

@@ -1,6 +1,6 @@
 import 'package:expense_tracker_client/core/configs/drift/drift.dart';
-import 'package:expense_tracker_client/data/models/fund_model.dart';
-import 'package:expense_tracker_client/data/protocols/datasources/sqlite/fund_sqlite_source.dart';
+import 'package:expense_tracker_client/features/funds/data/models/fund_model.dart';
+import 'package:expense_tracker_client/features/funds/data/protocols/datasources/sqlite/fund_sqlite_source.dart';
 
 class FundSQLiteSourceImpl implements FundSQLiteSource {
   final DriftDB database;

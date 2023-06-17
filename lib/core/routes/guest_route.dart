@@ -1,4 +1,3 @@
-import 'package:expense_tracker_client/presentation/pages/guest/login/login_page.dart';
 import 'package:get/get.dart';
 
 class GuestRoute {
@@ -6,7 +5,5 @@ class GuestRoute {
 
   static String getLoginRoute = login;
 
-  static List<GetPage> routes = [
-    GetPage(name: login, page: () => const LoginPage()),
-  ];
+  static List<GetPage> routes = [];
 }

@@ -1,4 +1,4 @@
-import 'package:expense_tracker_client/domain/entities/fund.dart';
+import 'package:expense_tracker_client/features/funds/domain/entities/fund.dart';
 
 class FundModel extends Fund {
   const FundModel({int? id, required String name}) : super(id: id, name: name);
