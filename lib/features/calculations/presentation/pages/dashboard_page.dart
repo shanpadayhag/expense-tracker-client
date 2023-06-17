@@ -1,6 +1,7 @@
-import 'package:expense_tracker_client/features/calculations/presentation/controllers/dashboard_controller.dart';
+import 'package:expense_tracker_client/core/enums/currency_name_enum.dart';
+import 'package:expense_tracker_client/core/layouts/user_default_layout.dart';
+import 'package:expense_tracker_client/core/utils/currency.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -10,27 +11,28 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  final controller = Get.put(DashboardController());
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return UserDefaultLayout(
+      appBarTitle: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          GetBuilder<DashboardController>(builder: (_) {
-            return Text(controller.test.toString());
-          }),
-          TextButton(
-            onPressed: controller.updateTest,
-            child: const Text('update'),
-          ),
-          TextButton(
-            onPressed: () {
-              Get.offAndToNamed('/wallet');
-            },
-            child: const Text('replace page'),
-          ),
+          const Text('Today: ',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w300,
+              )),
+          const SizedBox(width: 5),
+          Text('${Currency.getSymbol(CurrencyNameEnum.php)} 1,234.56',
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w400,
+              ))
         ],
+      ),
+      child: const Column(
+        children: [],
       ),
     );
   }
