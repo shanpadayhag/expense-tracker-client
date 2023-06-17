@@ -22,25 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
   @override
   Widget build(BuildContext context) {
     return UserDefaultLayout(
-      appBarTitle: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          const Text(
-            'Today: ',
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-          const SizedBox(width: 2),
-          Text('${CurrencyUtils.getSymbol(CurrencyNameEnum.php)}1,234.56',
-              style: const TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.w400,
-              ))
-        ],
-      ),
+      appBarTitle: const _DashboardPageAppBarTitle(expenses: 1234.56),
       child: Column(
         children: [
           Row(
@@ -67,6 +49,40 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _DashboardPageAppBarTitle extends StatelessWidget {
+  final double expenses;
+
+  const _DashboardPageAppBarTitle({
+    Key? key,
+    required this.expenses,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        const Text(
+          'Today: ',
+          style: TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
+        const SizedBox(width: 2),
+        Text(
+          '${CurrencyUtils.getSymbol(CurrencyNameEnum.php)}${expenses.toString()}',
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w400,
+          ),
+        )
+      ],
     );
   }
 }
