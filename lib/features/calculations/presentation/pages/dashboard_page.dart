@@ -69,18 +69,12 @@ class _DashboardPageAppBarTitle extends StatelessWidget {
       children: [
         const Text(
           'Today: ',
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w300,
-          ),
+          style: TextStyle(fontSize: 12, fontWeight: FontWeight.w300),
         ),
         const SizedBox(width: 2),
         Text(
           '${CurrencyUtils.getSymbol(CurrencyNameEnum.php)}${expenses.toString()}',
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w400,
-          ),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
         )
       ],
     );
