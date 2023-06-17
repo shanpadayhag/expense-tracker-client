@@ -46,7 +46,7 @@ class _UserDefaultLayoutState extends State<UserDefaultLayout> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+        padding: const EdgeInsets.only(top: 25, left: 20, right: 20),
         child: widget.child,
       ),
     );
