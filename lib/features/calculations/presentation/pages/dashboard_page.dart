@@ -1,10 +1,13 @@
-import 'package:expense_tracker_client/core/enums/color_enum.dart';
+import 'package:expense_tracker_client/core/components/segment_control/segment_control.dart';
+import 'package:expense_tracker_client/core/components/segment_control/segment_control_child.dart';
 import 'package:expense_tracker_client/core/enums/currency_name_enum.dart';
 import 'package:expense_tracker_client/core/enums/financial_type_enum.dart';
 import 'package:expense_tracker_client/core/layouts/user_default_layout.dart';
-import 'package:expense_tracker_client/core/utils/currency.dart';
+import 'package:expense_tracker_client/core/utils/currency_utils.dart';
+import 'package:expense_tracker_client/features/calculations/presentation/controllers/dashboard_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -14,6 +17,8 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
+  final controller = Get.put(DashboardController());
+
   @override
   Widget build(BuildContext context) {
     return UserDefaultLayout(
@@ -29,7 +34,7 @@ class _DashboardPageState extends State<DashboardPage> {
             ),
           ),
           const SizedBox(width: 2),
-          Text('${Currency.getSymbol(CurrencyNameEnum.php)}1,234.56',
+          Text('${CurrencyUtils.getSymbol(CurrencyNameEnum.php)}1,234.56',
               style: const TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
@@ -41,34 +46,23 @@ class _DashboardPageState extends State<DashboardPage> {
           Row(
             children: [
               Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: ColorEnum.ultraMarineBlue.value,
-                        style: BorderStyle.solid,
+                child: GetBuilder<DashboardController>(
+                  builder: (_) => SegmentControl(
+                    value: controller.financialType.name,
+                    onValueChanged: controller.setFinancialType,
+                    children: [
+                      SegmentControlChild(
+                        value: FinancialTypeEnum.expense.name,
+                        label: FinancialTypeEnum.expense.label,
                       ),
-                      borderRadius:
-                          const BorderRadius.all(Radius.circular(10))),
-                  child: CupertinoSlidingSegmentedControl(
-                    children: {
-                      FinancialTypeEnum.expense.name: Text(
-                        FinancialTypeEnum.expense.label,
-                        style: const TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.normal),
+                      SegmentControlChild(
+                        value: FinancialTypeEnum.income.name,
+                        label: FinancialTypeEnum.income.label,
                       ),
-                      FinancialTypeEnum.income.name: Text(
-                        FinancialTypeEnum.income.label,
-                        style:
-                            TextStyle(color: ColorEnum.ultraMarineBlue.value),
-                      ),
-                    },
-                    onValueChanged: (value) {},
-                    groupValue: FinancialTypeEnum.expense.name,
-                    backgroundColor: Colors.transparent,
-                    thumbColor: ColorEnum.ultraMarineBlue.value,
+                    ],
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ],
