@@ -27,8 +27,8 @@ class _UserDefaultLayoutState extends State<UserDefaultLayout> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(ColorEnum.deepLilac.value),
-                Color(ColorEnum.bluishPurple.value),
+                ColorEnum.deepLilac.value,
+                ColorEnum.bluishPurple.value,
               ],
             ),
           ),
@@ -39,13 +39,16 @@ class _UserDefaultLayoutState extends State<UserDefaultLayout> {
                 primary: false,
                 title: widget.appBarTitle,
                 backgroundColor: Colors.transparent,
-                elevation: 10,
+                elevation: 8,
               )
             ],
           ),
         ),
       ),
-      body: widget.child,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 15, left: 15, right: 15),
+        child: widget.child,
+      ),
     );
   }
 }
