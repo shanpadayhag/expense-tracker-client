@@ -3,7 +3,7 @@ import 'package:expense_tracker_client/core/components/segment_control/segment_c
 import 'package:expense_tracker_client/core/enums/financial_type_enum.dart';
 import 'package:expense_tracker_client/core/layouts/user_default_layout.dart';
 import 'package:expense_tracker_client/features/calculations/presentation/components/month_savings.dart';
-import 'package:expense_tracker_client/features/calculations/presentation/controllers/dashboard_controller.dart';
+import 'package:expense_tracker_client/features/dashboard/presentation/controllers/dashboard_controller.dart';
 import 'package:expense_tracker_client/features/dashboard/presentation/components/dashboard_app_bar_title.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

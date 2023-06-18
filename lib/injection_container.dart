@@ -2,7 +2,7 @@ import 'package:expense_tracker_client/core/components/segment_control/segment_c
 import 'package:expense_tracker_client/core/configs/drift/drift.dart';
 import 'package:expense_tracker_client/core/utils/currency_utils.dart';
 import 'package:expense_tracker_client/core/utils/enum_utils.dart';
-import 'package:expense_tracker_client/features/calculations/presentation/controllers/dashboard_controller.dart';
+import 'package:expense_tracker_client/features/dashboard/presentation/controllers/dashboard_controller.dart';
 import 'package:expense_tracker_client/features/funds/data/datasources/sqlite/fund_sqlite_source.dart';
 import 'package:expense_tracker_client/features/funds/data/repositories/fund_repository_impl.dart';
 import 'package:expense_tracker_client/features/funds/domain/usecases/add_fund.dart';
