@@ -18,6 +18,7 @@ class DashboardPage extends StatelessWidget {
     return UserDefaultLayout(
         appBarTitle: const DashboardPageAppBarTitle(expenses: 1234.56),
         child: Wrap(
+          runSpacing: 20,
           children: [
             Row(children: [
               Expanded(

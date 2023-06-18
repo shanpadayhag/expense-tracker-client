@@ -19,6 +19,7 @@ class _UserDefaultLayoutState extends State<UserDefaultLayout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(75),
         child: Container(

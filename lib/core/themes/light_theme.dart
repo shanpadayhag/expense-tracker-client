@@ -7,7 +7,6 @@ final lightTheme = ThemeData(
           fontFamily: 'Poppins',
           fontSize: 14,
           fontWeight: FontWeight.w400,
-          color: Colors.white,
-          letterSpacing: 0.5),
+          color: Colors.white),
     ),
     textTheme: const TextTheme());

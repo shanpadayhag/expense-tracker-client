@@ -22,13 +22,14 @@ class DashboardPageAppBarTitle extends StatelessWidget {
         const Text(
           'Today: ',
           style: TextStyle(
-            fontSize: 12,
+            fontSize: 14,
             color: Colors.white70,
           ),
         ),
         const SizedBox(width: 2),
         Text(
           currencyUtil.amountToCurrencyFormat(expenses, CurrencyNameEnum.php),
+          style: const TextStyle(fontSize: 16),
         )
       ],
     );
