@@ -23,8 +23,8 @@ class MonthSavings extends StatelessWidget {
         color: Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.shade300,
-            blurRadius: 10,
+            color: Colors.grey.shade200,
+            blurRadius: 5,
           )
         ],
       ),
@@ -38,16 +38,12 @@ class MonthSavings extends StatelessWidget {
             children: [
               Text(
                 'March Savings',
-                style: TextStyle(
-                  color: ColorEnum.starDust.value,
-                ),
+                style: Theme.of(context).textTheme.labelMedium,
               ),
               Text(
-                currencyUtil.amountToCurrencyFormat(
-                    savingsAmount, CurrencyNameEnum.php),
-                style:
-                    const TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-              ),
+                  currencyUtil.amountToCurrencyFormat(
+                      savingsAmount, CurrencyNameEnum.php),
+                  style: Theme.of(context).textTheme.displayMedium),
             ],
           ),
           Stack(
@@ -68,12 +64,15 @@ class MonthSavings extends StatelessWidget {
                   children: [
                     const Text(
                       'Earned',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
                     ),
                     Text(
                       currencyUtil.amountToCurrencyFormat(
                           10500, CurrencyNameEnum.php),
-                      style: TextStyle(color: ColorEnum.paleSky.value),
+                      style: TextStyle(
+                          color: ColorEnum.paleSky.value,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
@@ -98,12 +97,15 @@ class MonthSavings extends StatelessWidget {
                   children: [
                     const Text(
                       'Spend',
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w500),
                     ),
                     Text(
                       currencyUtil.amountToCurrencyFormat(
                           10500, CurrencyNameEnum.php),
-                      style: TextStyle(color: ColorEnum.paleSky.value),
+                      style: TextStyle(
+                          color: ColorEnum.paleSky.value,
+                          fontWeight: FontWeight.w500),
                     ),
                   ],
                 ),
