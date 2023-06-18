@@ -17,24 +17,28 @@ void init() {
   Get.lazyPut<SegmentControlController>(() => SegmentControlController());
 
   // Use cases
-  Get.lazyPut<AddFund>(() => AddFund(Get.find<FundRepositoryImpl>()));
-  Get.lazyPut<GetFunds>(() => GetFunds(Get.find<FundRepositoryImpl>()));
+  Get.create<AddFund>(() => AddFund(Get.find<FundRepositoryImpl>()),
+      permanent: true);
+  Get.create<GetFunds>(() => GetFunds(Get.find<FundRepositoryImpl>()),
+      permanent: true);
 
   // Repositories
-  Get.lazyPut<FundRepositoryImpl>(
-      () => FundRepositoryImpl(sqliteSource: Get.find<FundSQLiteSourceImpl>()));
+  Get.create<FundRepositoryImpl>(
+      () => FundRepositoryImpl(sqliteSource: Get.find<FundSQLiteSourceImpl>()),
+      permanent: true);
 
   // Datasources
-  Get.lazyPut<FundSQLiteSourceImpl>(
-      () => FundSQLiteSourceImpl(database: Get.find<DriftDB>()));
+  Get.create<FundSQLiteSourceImpl>(
+      () => FundSQLiteSourceImpl(database: Get.find<DriftDB>()),
+      permanent: true);
 
   // Configs
-  Get.lazyPut<DriftDB>(() => DriftDB());
+  Get.create<DriftDB>(() => DriftDB(), permanent: true);
 
   // Utils
-  Get.lazyPut<EnumUtil>(() => EnumUtil());
-  Get.lazyPut<CurrencyUtil>(() => CurrencyUtil());
+  Get.create<EnumUtil>(() => EnumUtil(), permanent: true);
+  Get.create<CurrencyUtil>(() => CurrencyUtil(), permanent: true);
 
   // External
-  Get.lazyPut<http.Client>(() => http.Client());
+  Get.create<http.Client>(() => http.Client(), permanent: true);
 }
