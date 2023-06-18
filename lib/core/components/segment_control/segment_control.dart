@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SegmentControl extends StatefulWidget {
+class SegmentControl extends StatelessWidget {
   final List<SegmentControlChild> children;
   final String? value;
   final void Function(String? value)? onValueChanged;
@@ -18,15 +18,9 @@ class SegmentControl extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _SegmentControlState createState() => _SegmentControlState();
-}
-
-class _SegmentControlState extends State<SegmentControl> {
-  final controller =
-      Get.put(SegmentControlController(), tag: UniqueKey().toString());
-
-  @override
   Widget build(BuildContext context) {
+    final controller = Get.find<SegmentControlController>();
+
     return Container(
       decoration: BoxDecoration(
           border: Border.all(
@@ -35,12 +29,11 @@ class _SegmentControlState extends State<SegmentControl> {
           ),
           borderRadius: const BorderRadius.all(Radius.circular(10))),
       child: CupertinoSlidingSegmentedControl(
-        children: controller.childrenToMap(widget.children, widget.value),
-        onValueChanged: widget.onValueChanged ?? (value) {},
-        groupValue: widget.value ?? '',
-        backgroundColor: Colors.transparent,
-        thumbColor: ColorEnum.ultraMarineBlue.value,
-      ),
+          children: controller.childrenToMap(children, value),
+          onValueChanged: onValueChanged ?? (value) {},
+          groupValue: value ?? '',
+          backgroundColor: Colors.transparent,
+          thumbColor: ColorEnum.ultraMarineBlue.value),
     );
   }
 }

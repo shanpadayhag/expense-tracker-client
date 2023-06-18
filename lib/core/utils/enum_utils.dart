@@ -1,5 +1,5 @@
-class EnumUtils {
-  static T getEnumValueFromString<T>(List<T> enumValues, String? value) {
+class EnumUtil {
+  T getEnumValueFromString<T>(List<T> enumValues, String? value) {
     for (final enumValue in enumValues) {
       if (enumValue.toString() == 'FinancialTypeEnum.$value') {
         return enumValue;

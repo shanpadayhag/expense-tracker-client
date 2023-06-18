@@ -1,6 +1,6 @@
 import 'package:expense_tracker_client/features/calculations/presentation/pages/wallet_page.dart';
 import 'package:get/get.dart';
-import 'package:expense_tracker_client/features/calculations/presentation/pages/dashboard_page.dart';
+import 'package:expense_tracker_client/features/dashboard/presentation/pages/dashboard_page.dart';
 
 class UserRoute {
   static String dashboard = "/";

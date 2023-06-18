@@ -20,7 +20,7 @@ class _UserDefaultLayoutState extends State<UserDefaultLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
+        preferredSize: const Size.fromHeight(75),
         child: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
