@@ -3,7 +3,7 @@ import 'package:expense_tracker_client/core/routes/user_route.dart';
 import 'package:get/get.dart';
 
 class Routes {
-  static String initialRoute = UserRoute.dashboard;
+  static String initialRoute = UserRoute.wallet;
 
   static List<GetPage> routes = [...GuestRoute.routes, ...UserRoute.routes];
 }

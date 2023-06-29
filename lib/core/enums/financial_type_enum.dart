@@ -1,6 +1,6 @@
 enum FinancialTypeEnum {
-  expense('Expense'),
-  income('Income');
+  earned('Earned'),
+  spend('Spend');
 
   final String label;
   const FinancialTypeEnum(this.label);

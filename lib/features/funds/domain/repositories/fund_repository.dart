@@ -7,4 +7,5 @@ abstract class FundRepository {
   Future<Either<Failure, Fund>> addFund(Fund params);
   Future<Either<Failure, Fund>> updateFund();
   Future<Either<Failure, Fund>> deleteFund();
+  Future<Either<Failure, Fund>> upsertFund(Fund fund);
 }

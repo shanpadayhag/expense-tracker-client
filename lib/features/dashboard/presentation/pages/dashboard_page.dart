@@ -28,12 +28,12 @@ class DashboardPage extends StatelessWidget {
                               onValueChanged: controller.setFinancialType,
                               children: [
                                 SegmentControlChild(
-                                  value: FinancialTypeEnum.expense.name,
-                                  label: FinancialTypeEnum.expense.label,
+                                  value: FinancialTypeEnum.spend.name,
+                                  label: FinancialTypeEnum.spend.label,
                                 ),
                                 SegmentControlChild(
-                                  value: FinancialTypeEnum.income.name,
-                                  label: FinancialTypeEnum.income.label,
+                                  value: FinancialTypeEnum.earned.name,
+                                  label: FinancialTypeEnum.earned.label,
                                 ),
                               ]))),
             ]),

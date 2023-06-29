@@ -39,4 +39,14 @@ class FundRepositoryImpl implements FundRepository {
   Future<Either<Failure, Fund>> updateFund() async {
     throw UnimplementedError();
   }
+
+  @override
+  Future<Either<Failure, Fund>> upsertFund(Fund fund) async {
+    try {
+      return Right(await sqliteSource
+          .upsertFund(FundModel(name: fund.name, id: fund.id)));
+    } on SQLiteException {
+      return Left(SQLiteFailure());
+    }
+  }
 }

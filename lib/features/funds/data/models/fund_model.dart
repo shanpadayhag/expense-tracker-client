@@ -10,4 +10,8 @@ class FundModel extends Fund {
   Map<String, dynamic> toJson() {
     return {'id': id, 'name': name};
   }
+
+  static FundModel fromEntity(Fund fund) {
+    return FundModel(id: fund.id, name: fund.name);
+  }
 }

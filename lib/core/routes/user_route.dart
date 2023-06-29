@@ -1,4 +1,4 @@
-import 'package:expense_tracker_client/features/calculations/presentation/pages/wallet_page.dart';
+import 'package:expense_tracker_client/features/transactions/presentation/pages/wallet_page.dart';
 import 'package:get/get.dart';
 import 'package:expense_tracker_client/features/dashboard/presentation/pages/dashboard_page.dart';
 
@@ -8,6 +8,6 @@ class UserRoute {
 
   static List<GetPage> routes = [
     GetPage(name: dashboard, page: () => const DashboardPage()),
-    GetPage(name: wallet, page: () => const WalletPage()),
+    GetPage(name: wallet, page: () => WalletPage()),
   ];
 }

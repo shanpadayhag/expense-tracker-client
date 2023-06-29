@@ -7,7 +7,7 @@ class DashboardController extends GetxController {
 
   DashboardController({required this.enumUtil});
 
-  var financialType = FinancialTypeEnum.expense;
+  var financialType = FinancialTypeEnum.spend;
 
   void setFinancialType(String? type) {
     financialType =
