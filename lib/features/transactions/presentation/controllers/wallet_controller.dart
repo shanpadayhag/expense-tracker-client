@@ -13,9 +13,9 @@ class WalletController extends GetxController {
     required this.createTransaction,
   });
 
-  final fundNameTextController = TextEditingController(text: "Test");
-  final transactionNameTextController = TextEditingController(text: "Test");
-  final paymentAmountTextController = TextEditingController(text: "1");
+  final fundNameTextController = TextEditingController(text: "");
+  final transactionNameTextController = TextEditingController(text: "");
+  final paymentAmountTextController = TextEditingController(text: "");
 
   final List<Fund> funds = [];
 
